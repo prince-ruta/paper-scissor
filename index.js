@@ -1,8 +1,54 @@
 const options = ["rock", "paper","scissors"];
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissor = document.querySelector('.scissor');
+const outCome = document.querySelector('.outcome');
+const result = document.createElement('h2');
+outCome.appendChild(result);
 
-function getComputerChoice(){
+function getComputerChoice () {
     const choice = options[Math.floor(Math.random() * options.length)];
-    /* console.log(choice); */
+    return choice;
+}
+
+rock.addEventListener('click', () => {
+    if(getComputerChoice() == 'rock') {
+        result.innerText = `It's a Tie`;
+    }
+    else if(getComputerChoice() == "paper") {
+        result.innerText = `you Lose, paper beats rock`
+    }
+    else if(getComputerChoice() == "scissors") {
+        result.innerText = `you win, rock beats scissors`
+    }
+})
+
+scissor.addEventListener('click', () => {
+    if(getComputerChoice() == 'scissor') {
+        result.innerText = `It's a Tie`;
+    }
+    else if(getComputerChoice() == "rock") {
+        result.innerText = `you Lose, rock beats scissors`;
+    }
+    else if(getComputerChoice() == "paper") {
+        result.innerText = `you win, scissors beats paper`
+    }
+})
+
+paper.addEventListener('click', () => {
+    if(getComputerChoice() == 'paper') {
+        result.innerText = `It's a Tie`;
+    }
+    else if(getComputerChoice() == "scissors") {
+        result.innerText = `you Lose, scissors beats paper`;
+    }
+    else if(getComputerChoice() == "rock") {
+        result.innerText = `you win, paper beats rock`
+    }
+})
+
+/* function getComputerChoice(){
+    const choice = options[Math.floor(Math.random() * options.length)];
     return choice;
 }
 
@@ -75,4 +121,4 @@ function game(){
     }
 } 
 
-game()
+game() */
