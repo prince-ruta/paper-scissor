@@ -3,7 +3,8 @@ const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissor = document.querySelector('.scissor');
 const outCome = document.querySelector('.outcome');
-const result = document.createElement('h2');
+const result = document.createElement('h1');
+result.classList.toggle('result');
 outCome.appendChild(result);
 
 function getComputerChoice () {
